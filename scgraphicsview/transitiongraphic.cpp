@@ -15,6 +15,7 @@
 #include "selectableboxgraphic.h"
 #include <QDebug>
 #include <QApplication>
+#include <QTCore/qmath.h>
 
 
 #define PI                  3.14159265359

@@ -1,5 +1,6 @@
 #include "linesegmentgraphic.h"
 #include <QDebug>
+#include <QTCore/qmath.h>
 
 
 
@@ -235,24 +236,24 @@ void LineSegmentGraphic::enclosePathInCoordindates(qreal lineStartX,qreal lineSt
     //qDebug() << "theta is: " << theta * 180.0/3.141536 << "\tthe x  multiple would be " << cos(theta) << "\tthe y multiple would be " << sin(theta);
 
     qreal m = (lineEndY - lineStartY)/(lineEndX - lineStartX);  // y = mx + b
-    qreal theta = atan(m);          // find the angle between the two points
+    qreal theta = qAtan(m);          // find the angle between the two points
 
     // if the two points are within 2 elbow guards of each other, then the line segment hover box will be a line in the middle of them
-    qreal dist = sqrt( (lineEndY - lineStartY)* (lineEndY - lineStartY) + (lineEndX - lineStartX)*(lineEndX - lineStartX)   );
+    qreal dist = qSqrt( (lineEndY - lineStartY)* (lineEndY - lineStartY) + (lineEndX - lineStartX)*(lineEndX - lineStartX)   );
     qreal xElbowGuard, yElbowGuard;
     if(dist < 2*ELBOW_GUARD_BUFFER)
     {
-        xElbowGuard = cos(theta) * dist/2.0;
-        yElbowGuard = sin(theta) * dist/2.0;
+        xElbowGuard = qCos(theta) * dist/2.0;
+        yElbowGuard = qSin(theta) * dist/2.0;
     }
     else
     {
-        xElbowGuard = cos(theta) * ELBOW_GUARD_BUFFER;
-        yElbowGuard = sin(theta) * ELBOW_GUARD_BUFFER;
+        xElbowGuard = qCos(theta) * ELBOW_GUARD_BUFFER;
+        yElbowGuard = qSin(theta) * ELBOW_GUARD_BUFFER;
     }
 
-    qreal xLineWidth = cos(theta) * LINE_HOVER_WIDTH;
-    qreal yLineWidth = sin(theta) * LINE_HOVER_WIDTH;
+    qreal xLineWidth = qCos(theta) * LINE_HOVER_WIDTH;
+    qreal yLineWidth = qSin(theta) * LINE_HOVER_WIDTH;
 
     QPointF p1, p2, p3, p4;
     if( lineEndX >= lineStartX)     // for quadrants 4 and 1

@@ -34,6 +34,7 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <QGraphicsSceneMouseEvent>
+#include <QTCore/qmath.h>
 
 #define QREAL_MAX   std::numeric_limits<double>::max()
 #define QREAL_MIN   std::numeric_limits<double>::min()
@@ -244,7 +245,7 @@ QGraphicsView * SCGraphicsView::getQGraphicsView()
 
 qreal SCGraphicsView::distance(QPointF a, QPointF b)
 {
-    return sqrt( (a.x()-b.x())*(a.x()-b.x()) + (a.y()-b.y())*(a.y()-b.y()));
+    return qSqrt( (a.x()-b.x())*(a.x()-b.x()) + (a.y()-b.y())*(a.y()-b.y()));
 }
 
 /**

@@ -147,7 +147,7 @@ void SCState::initCommon()
     // connect changing the name attribute to the text block
     connect(name, SIGNAL(changed(StateName*)), _IdTextBlock, SLOT(handleAttributeChanged(StateName*)));
 
-    qDebug()<< "_IdTextBlock = " +QString::number((int)_IdTextBlock) +", state = " + defaultName;
+    qDebug()<< "_IdTextBlock = , state = " + defaultName;
 }
 
 

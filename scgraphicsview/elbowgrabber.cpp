@@ -2,6 +2,7 @@
 #include "transitiongraphic.h"
 #include "arrowheadgraphic.h"
 #include <QDebug>
+#include <QTcore/qmath.h>
 
 #define PI                  3.14159265359
 #define SNAP_ANGLE          11
@@ -372,12 +373,12 @@ void ElbowGrabber::setPosSnap(qreal x, qreal y)
 
 qreal ElbowGrabber::distanceX(QPointF one, QPointF two)
 {
-    return fabs(one.x()-two.x());
+    return qAbs(one.x()-two.x());
 }
 
 qreal ElbowGrabber::distanceY(QPointF one, QPointF two)
 {
-    return fabs(one.y()-two.y());
+    return qAbs(one.y()-two.y());
 }
 
 qreal ElbowGrabber::distance(ElbowGrabber* one, ElbowGrabber* two)
@@ -387,7 +388,7 @@ qreal ElbowGrabber::distance(ElbowGrabber* one, ElbowGrabber* two)
     qreal x2 = two->x();
     qreal y2 = two->y();
 
-    return sqrt((y2-y1)*(y2-y1) + (x2-x1)*(x2-x1));
+    return qSqrt((y2-y1)*(y2-y1) + (x2-x1)*(x2-x1));
 }
 
 int ElbowGrabber::getZone(qreal angle)

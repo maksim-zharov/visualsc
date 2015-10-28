@@ -1342,7 +1342,7 @@ void SCDataModel::handleMakeANewIDTextBlock ( TextBlockAttributes *attributes)
         return;
 
     SCTextBlock *textBlock = _currentState->getIDTextBlock();
-    qDebug()<<" handleMakeANewIDTextBlock textBlock=" +QString::number((int)textBlock)+", current state= "+ _currentState->objectName();
+    qDebug()<<" handleMakeANewIDTextBlock textBlock= , current state= "+ _currentState->objectName();
 
     textBlock->attributes.setAttributes(*attributes);
     delete attributes;
