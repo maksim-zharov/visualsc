@@ -6,7 +6,7 @@ CONFIG(release, debug|release) {
     OBJECTS_DIR = $${PWD}/bin/debug
 }
 
-QMAKE_RPATHDIR+=$${OBJECTS_DIR}
+QMAKE_RPATHDIR+=@executable_path/../Frameworks
 MOC_DIR = $${OBJECTS_DIR}
 DESTDIR = $${OBJECTS_DIR}
 OBJECTS_DIR = $${OBJECTS_DIR}
