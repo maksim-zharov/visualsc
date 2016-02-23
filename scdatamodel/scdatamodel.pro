@@ -30,10 +30,6 @@ SOURCES += scdatamodel.cpp \
     idattribute.cpp \
     scitem.cpp \
     textblock.cpp \
-    codewriter.cpp \
-    cwstate.cpp \
-    cwtransition.cpp \
-    cwstatemachine.cpp \
     sctransitionbranch.cpp \
     scforkedtransition.cpp
 
@@ -51,10 +47,6 @@ HEADERS += scdatamodel.h\
     textblock.h \
     idattribute.h \
     scitem.h \
-    codewriter.h \
-    cwstate.h \
-    cwtransition.h \
-    cwstatemachine.h \
     sctransitionbranch.h \
     scforkedtransition.h
 

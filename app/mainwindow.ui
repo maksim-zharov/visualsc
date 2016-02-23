@@ -206,21 +206,6 @@
     <string>Close</string>
    </property>
   </action>
-  <action name="actionExportCode">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../scformview/resources/scformview.qrc">
-     <normaloff>:/SCFormView/export.png</normaloff>:/SCFormView/export.png</iconset>
-   </property>
-   <property name="text">
-    <string>Export to Code</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+E</string>
-   </property>
-  </action>
   <action name="actionImport">
    <property name="icon">
     <iconset resource="../scformview/resources/scformview.qrc">

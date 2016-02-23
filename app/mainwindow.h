@@ -99,7 +99,6 @@ private slots:
     void handleMessage(QString);
     void handleFileOpenClick();
     void handleFileSaveClick();
-    void handleExportCodeClick();
     void handleNewClick();
     void handleReadInputFileDone(bool,QStringList);
     void handleItemClicked();

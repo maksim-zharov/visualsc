@@ -75,7 +75,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // custom action connects
     connect ( ui->actionOpen, SIGNAL(triggered()), this, SLOT(handleFileOpenClick()));
     connect ( ui->actionSave, SIGNAL(triggered()), this, SLOT(handleFileSaveClick()));
-    connect ( ui->actionExportCode, SIGNAL(triggered()), this, SLOT(handleExportCodeClick()));
     connect ( ui->actionNew, SIGNAL(triggered()), this, SLOT(handleNewClick()));
 
 
@@ -106,7 +105,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(_formEditorWindow, SIGNAL(saveClick()), this, SLOT(handleFileSaveClick()));
     connect(_formEditorWindow, SIGNAL(saveAsClick()), this, SLOT(on_actionSave_As_triggered()));
     connect(_formEditorWindow, SIGNAL(importClick()), this, SLOT(on_actionImport_triggered()));
-    connect(_formEditorWindow, SIGNAL(exportClick()), this, SLOT(handleExportCodeClick()));
+
 
     _formEditorWindow->show();
 
@@ -705,60 +704,6 @@ void MainWindow::on_actionSave_As_triggered()
         saveSettings();
     }
 }
-
-void MainWindow::handleExportCodeClick()
-{
-
-    if(_project==NULL)
-        return;
-
-    // return if the the check on the datamodel came out wrong
-    if(!_project->getDM()->checkDataModel())
-    {
-        this->setWindowTitle("Exported failed: please correct errors");
-        return;
-    }
-
-    bool exportStatus;
-
-    // check if we have exported the file before
-    if(_currentExportFullPath.isEmpty())
-    {
-        // let the user select a place to put the file.
-        if(_currentFolder.isEmpty())
-            _currentFolder = QDir::currentPath();
-
-
-        QString classNameLower = _project->getDM()->getCFileName();
-        QString defaultSave = _currentFolder + QString("\\"+classNameLower);
-        QString exportName = QFileDialog::getSaveFileName(this, tr("Save as .cpp and .h Files"), defaultSave, tr("C++ and Header (*.cpp)"));
-
-        // check if the exportname is valid
-        if(exportName.isEmpty())
-        {
-
-        }
-        else
-        {
-            _currentExportFullPath = exportName;
-            _currentFolder = QFileInfo(_currentExportFullPath).path();
-            exportStatus = _project->exportToCode(_currentExportFullPath);
-        }
-    }
-    else
-    {
-        exportStatus = _project->exportToCode(_currentExportFullPath);
-    }
-
-    if(exportStatus)
-    {
-        this->setWindowTitle("Exported to "+_currentExportFullPath);
-        saveSettings();
-    }
-}
-
-
-
 
 void MainWindow::on_actionImport_triggered()
 {

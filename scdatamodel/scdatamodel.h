@@ -28,7 +28,6 @@
 #include "scxmlreader.h"
 #include <QXmlStreamWriter>
 #include <QTextStream>
-#include <codewriter.h>
 #include <QSettings>
 #include "scforkedtransition.h"
 
@@ -92,7 +91,6 @@ public:
     void open(QString scxmlFile);
 
     bool save(QString scxmlFile, QString & message);
-    bool exportToCode(QString cName, QString &message);
 
     void initializeEmptyStateMachine();
 
