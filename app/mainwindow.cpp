@@ -605,7 +605,7 @@ void MainWindow::handleFileOpenClick()
         _currentFolder = QDir::currentPath();
 
 
-    QString newFileFullPath = QFileDialog::getOpenFileName(this, tr("Open SCXML Input File"), _currentFolder, tr("SCXML Files (*.scxml)"));
+    QString newFileFullPath = QFileDialog::getOpenFileName(this, tr("Open SCXML Input File"), _currentFolder, tr("SCXML Files (*.scxml)"), 0, QFileDialog::DontUseNativeDialog);
 
 
     // If open was canceled, then stop this function from continuing
@@ -773,7 +773,7 @@ void MainWindow::on_actionImport_triggered()
     if(_currentFolder.isEmpty())
         _currentFolder = QDir::currentPath();
 
-    QString importFileName = QFileDialog::getOpenFileName(this, tr("Import .SCXML File"), _currentFolder, tr("SCXML Files (*.scxml)"));
+    QString importFileName = QFileDialog::getOpenFileName(this, tr("Import .SCXML File"), _currentFolder, tr("SCXML Files (*.scxml)"), 0, QFileDialog::DontUseNativeDialog);
 
     if(importFileName.isEmpty())
     {
