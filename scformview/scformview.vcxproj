@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5BAEDBD6-F4D6-38B3-901F-40533C529272}</ProjectGuid>
+    <RootNamespace>scformview</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin\debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>..\bin\debug\</IntermediateDirectory>
+    <PrimaryOutput>scformview</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin\release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>..\bin\release\</IntermediateDirectory>
+    <PrimaryOutput>scformview</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\bin\debug\visualsc\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\bin\debug\scformview\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scformview</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PostBuildEventUseInBuild>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\bin\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\bin\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scformview</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\scdatamodel;..\..\QT_Sources\qt5\qtbuild\qtbase\include;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtWidgets;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtGui;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtCore;..\bin\debug;..\..\QT_Sources\qt5\qtbase\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>..\bin\debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>..\bin\debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCFORMVIEWVIEW_LIBRARY;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;C:/Work/visualsc_fork/bin/debug/visualsc/scdatamodel.lib;Qt5Widgetsd.lib;Qt5Guid.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Work\QT_Sources\qt5\qtbuild\qtbase\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\scformview.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCFORMVIEWVIEW_LIBRARY;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" ..\bin\debug</Command>
+      <Message>Copy scformview.dll to ..\bin\debug</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\scdatamodel;..\..\QT_Sources\qt5\qtbuild\qtbase\include;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtWidgets;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtGui;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtCore;..\bin\release;..\..\QT_Sources\qt5\qtbase\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>..\bin\release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>..\bin\release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCFORMVIEWVIEW_LIBRARY;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;C:/Work/visualsc_fork/bin/release/scdatamodel.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Work\QT_Sources\qt5\qtbuild\qtbase\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\scformview.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCFORMVIEWVIEW_LIBRARY;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" ..\bin\release</Command>
+      <Message>Copy scformview.dll to ..\bin\release</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="customtablewidgetitem.cpp" />
+    <ClCompile Include="customtreewidgetitem.cpp" />
+    <ClCompile Include="formviewobject.cpp" />
+    <ClCompile Include="fvitem.cpp" />
+    <ClCompile Include="fvstate.cpp" />
+    <ClCompile Include="scformview.cpp" />
+    <ClCompile Include="stateselectionwindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="customtablewidgetitem.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">customtablewidgetitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore customtablewidgetitem.h -o C:\Work\visualsc_fork\bin\debug\moc_customtablewidgetitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC customtablewidgetitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_customtablewidgetitem.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">customtablewidgetitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore customtablewidgetitem.h -o C:\Work\visualsc_fork\bin\release\moc_customtablewidgetitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC customtablewidgetitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_customtablewidgetitem.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="customtreewidgetitem.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">customtreewidgetitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore customtreewidgetitem.h -o C:\Work\visualsc_fork\bin\debug\moc_customtreewidgetitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC customtreewidgetitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_customtreewidgetitem.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">customtreewidgetitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore customtreewidgetitem.h -o C:\Work\visualsc_fork\bin\release\moc_customtreewidgetitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC customtreewidgetitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_customtreewidgetitem.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="formviewobject.h" />
+    <ClInclude Include="fvitem.h" />
+    <ClInclude Include="fvstate.h" />
+    <CustomBuild Include="scformview.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scformview.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scformview.h -o C:\Work\visualsc_fork\bin\debug\moc_scformview.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scformview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scformview.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scformview.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scformview.h -o C:\Work\visualsc_fork\bin\release\moc_scformview.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scformview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scformview.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="scformview_global.h" />
+    <CustomBuild Include="stateselectionwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stateselectionwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore stateselectionwindow.h -o C:\Work\visualsc_fork\bin\debug\moc_stateselectionwindow.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC stateselectionwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_stateselectionwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stateselectionwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCFORMVIEWVIEW_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scformview -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore stateselectionwindow.h -o C:\Work\visualsc_fork\bin\release\moc_stateselectionwindow.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC stateselectionwindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_stateselectionwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bin\debug\moc_customtablewidgetitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_customtablewidgetitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_customtreewidgetitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_customtreewidgetitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scformview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scformview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_stateselectionwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_stateselectionwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\qrc_scformview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\qrc_scformview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Bold-32.png" />
+    <None Include="resources\Bold-50.png" />
+    <None Include="resources\bold.png" />
+    <None Include="resources\bringtofront.png" />
+    <None Include="resources\cancel.png" />
+    <None Include="resources\cancelw10.png" />
+    <None Include="resources\cardboardbox.png" />
+    <None Include="resources\cardboardboxnew.png" />
+    <None Include="resources\center.png" />
+    <None Include="resources\delete.png" />
+    <None Include="resources\deletesign.png" />
+    <None Include="resources\diagonalarrowhollow.png" />
+    <None Include="resources\export.png" />
+    <None Include="resources\family.png" />
+    <None Include="resources\floodfill.png" />
+    <None Include="resources\fork.png" />
+    <None Include="resources\framein.png" />
+    <None Include="resources\frameout.png" />
+    <None Include="resources\import.png" />
+    <None Include="resources\info.png" />
+    <None Include="resources\infow8.png" />
+    <None Include="resources\italic.png" />
+    <None Include="resources\leftarrow.png" />
+    <None Include="resources\linecolor.png" />
+    <None Include="resources\linepointer.png" />
+    <None Include="resources\minusw10.png" />
+    <None Include="resources\newfile.png" />
+    <None Include="resources\openfolder.png" />
+    <None Include="resources\picture.png" />
+    <None Include="resources\plusw10.png" />
+    <None Include="resources\pointer.png" />
+    <None Include="resources\reselect.png" />
+    <None Include="resources\reselectgrey.png" />
+    <None Include="resources\rightarrow.png" />
+    <None Include="resources\rightarrowhollow.png" />
+    <None Include="resources\rightarrowhollownew.png" />
+    <None Include="resources\roundadd.png" />
+    <None Include="resources\roundminus.png" />
+    <None Include="resources\save.png" />
+    <CustomBuild Include="resources\scformview.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">resources\scformview.qrc;resources\zoomin.png;resources\export.png;resources\floodfill.png;resources\bringtofront.png;resources\cancel.png;resources\underline.png;resources\save.png;resources\framein.png;resources\textbox.png;resources\minusw10.png;resources\textblock.bmp;resources\diagonalarrowhollow.png;resources\leftarrow.png;resources\openfolder.png;resources\newfile.png;resources\deletesign.png;resources\cardboardboxnew.png;resources\linecolor.png;resources\picture.png;resources\family.png;resources\cancelw10.png;resources\italic.png;resources\Bold-50.png;resources\statebutton.bmp;resources\rightarrowhollownew.png;resources\center.png;resources\textpointer.png;resources\bold.png;resources\fork.png;resources\info.png;resources\cardboardbox.png;resources\pointer.png;resources\transitionbutton.bmp;resources\import.png;resources\sendtoback.png;resources\Bold-32.png;resources\plusw10.png;resources\linepointer.png;resources\delete.png;resources\roundadd.png;resources\roundminus.png;resources\infow8.png;resources\reselectgrey.png;resources\rightarrow.png;resources\zoomout.png;resources\reselect.png;resources\rightarrowhollow.png;resources\frameout.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\rcc.exe -name scformview resources\scformview.qrc -o C:\Work\visualsc_fork\bin\debug\qrc_scformview.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC resources/scformview.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\qrc_scformview.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">resources\scformview.qrc;resources\zoomin.png;resources\export.png;resources\floodfill.png;resources\bringtofront.png;resources\cancel.png;resources\underline.png;resources\save.png;resources\framein.png;resources\textbox.png;resources\minusw10.png;resources\textblock.bmp;resources\diagonalarrowhollow.png;resources\leftarrow.png;resources\openfolder.png;resources\newfile.png;resources\deletesign.png;resources\cardboardboxnew.png;resources\linecolor.png;resources\picture.png;resources\family.png;resources\cancelw10.png;resources\italic.png;resources\Bold-50.png;resources\statebutton.bmp;resources\rightarrowhollownew.png;resources\center.png;resources\textpointer.png;resources\bold.png;resources\fork.png;resources\info.png;resources\cardboardbox.png;resources\pointer.png;resources\transitionbutton.bmp;resources\import.png;resources\sendtoback.png;resources\Bold-32.png;resources\plusw10.png;resources\linepointer.png;resources\delete.png;resources\roundadd.png;resources\roundminus.png;resources\infow8.png;resources\reselectgrey.png;resources\rightarrow.png;resources\zoomout.png;resources\reselect.png;resources\rightarrowhollow.png;resources\frameout.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\rcc.exe -name scformview resources\scformview.qrc -o C:\Work\visualsc_fork\bin\release\qrc_scformview.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC resources/scformview.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\qrc_scformview.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="resources\sendtoback.png" />
+    <None Include="resources\statebutton.bmp" />
+    <None Include="resources\textblock.bmp" />
+    <None Include="resources\textbox.png" />
+    <None Include="resources\textpointer.png" />
+    <None Include="resources\transitionbutton.bmp" />
+    <None Include="resources\underline.png" />
+    <None Include="resources\zoomin.png" />
+    <None Include="resources\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\family.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

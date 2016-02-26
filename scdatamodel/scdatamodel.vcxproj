@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2D7C6985-542E-3862-BAD9-4F2A21306875}</ProjectGuid>
+    <RootNamespace>scdatamodel</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin\debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>..\bin\debug\</IntermediateDirectory>
+    <PrimaryOutput>scdatamodel</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin\release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>..\bin\release\</IntermediateDirectory>
+    <PrimaryOutput>scdatamodel</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\bin\debug\visualsc\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\bin\debug\scdatamodel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scdatamodel</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PostBuildEventUseInBuild>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\bin\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\bin\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scdatamodel</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\QT_Sources\qt5\qtbuild\qtbase\include;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtWidgets;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtGui;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtCore;..\bin\debug;..\..\QT_Sources\qt5\qtbase\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>..\bin\debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>..\bin\debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCDATAMODEL_LIBRARY;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;Qt5Widgetsd.lib;Qt5Guid.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Work\QT_Sources\qt5\qtbuild\qtbase\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\scdatamodel.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCDATAMODEL_LIBRARY;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" ..\bin\debug</Command>
+      <Message>Copy scdatamodel.dll to ..\bin\debug</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\QT_Sources\qt5\qtbuild\qtbase\include;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtWidgets;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtGui;..\..\QT_Sources\qt5\qtbuild\qtbase\include\QtCore;..\bin\release;..\..\QT_Sources\qt5\qtbase\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>..\bin\release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>..\bin\release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCDATAMODEL_LIBRARY;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Work\QT_Sources\qt5\qtbuild\qtbase\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\scdatamodel.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;SCDATAMODEL_LIBRARY;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" ..\bin\release</Command>
+      <Message>Copy scdatamodel.dll to ..\bin\release</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="iattribute.cpp" />
+    <ClCompile Include="idattribute.cpp" />
+    <ClCompile Include="positionattribute.cpp" />
+    <ClCompile Include="scdatamodel.cpp" />
+    <ClCompile Include="scforkedtransition.cpp" />
+    <ClCompile Include="scitem.cpp" />
+    <ClCompile Include="scstate.cpp" />
+    <ClCompile Include="sctransition.cpp" />
+    <ClCompile Include="sctransitionbranch.cpp" />
+    <ClCompile Include="scxmlreader.cpp" />
+    <ClCompile Include="sizeattribute.cpp" />
+    <ClCompile Include="stateattributes.cpp" />
+    <ClCompile Include="textblock.cpp" />
+    <ClCompile Include="textblockattributes.cpp" />
+    <ClCompile Include="transitionattributes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SCDataModel_global.h" />
+    <CustomBuild Include="iattribute.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">iattribute.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore iattribute.h -o C:\Work\visualsc_fork\bin\debug\moc_iattribute.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC iattribute.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_iattribute.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">iattribute.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore iattribute.h -o C:\Work\visualsc_fork\bin\release\moc_iattribute.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC iattribute.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_iattribute.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="idattribute.h" />
+    <ClInclude Include="positionattribute.h" />
+    <CustomBuild Include="scdatamodel.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scdatamodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scdatamodel.h -o C:\Work\visualsc_fork\bin\debug\moc_scdatamodel.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scdatamodel.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scdatamodel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scdatamodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scdatamodel.h -o C:\Work\visualsc_fork\bin\release\moc_scdatamodel.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scdatamodel.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scdatamodel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="scforkedtransition.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scforkedtransition.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scforkedtransition.h -o C:\Work\visualsc_fork\bin\debug\moc_scforkedtransition.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scforkedtransition.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scforkedtransition.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scforkedtransition.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scforkedtransition.h -o C:\Work\visualsc_fork\bin\release\moc_scforkedtransition.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scforkedtransition.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scforkedtransition.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="scitem.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scitem.h -o C:\Work\visualsc_fork\bin\debug\moc_scitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scitem.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scitem.h -o C:\Work\visualsc_fork\bin\release\moc_scitem.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scitem.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scitem.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="scstate.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scstate.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scstate.h -o C:\Work\visualsc_fork\bin\debug\moc_scstate.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scstate.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scstate.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scstate.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scstate.h -o C:\Work\visualsc_fork\bin\release\moc_scstate.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scstate.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scstate.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="sctransition.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sctransition.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore sctransition.h -o C:\Work\visualsc_fork\bin\debug\moc_sctransition.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC sctransition.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_sctransition.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sctransition.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore sctransition.h -o C:\Work\visualsc_fork\bin\release\moc_sctransition.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC sctransition.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_sctransition.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="sctransitionbranch.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sctransitionbranch.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore sctransitionbranch.h -o C:\Work\visualsc_fork\bin\debug\moc_sctransitionbranch.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC sctransitionbranch.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_sctransitionbranch.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">sctransitionbranch.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore sctransitionbranch.h -o C:\Work\visualsc_fork\bin\release\moc_sctransitionbranch.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC sctransitionbranch.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_sctransitionbranch.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="scxmlreader.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">scxmlreader.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scxmlreader.h -o C:\Work\visualsc_fork\bin\debug\moc_scxmlreader.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC scxmlreader.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_scxmlreader.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">scxmlreader.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore scxmlreader.h -o C:\Work\visualsc_fork\bin\release\moc_scxmlreader.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC scxmlreader.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_scxmlreader.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="sizeattribute.h" />
+    <CustomBuild Include="stateattributes.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stateattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore stateattributes.h -o C:\Work\visualsc_fork\bin\debug\moc_stateattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC stateattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_stateattributes.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stateattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore stateattributes.h -o C:\Work\visualsc_fork\bin\release\moc_stateattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC stateattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_stateattributes.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="textblock.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">textblock.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore textblock.h -o C:\Work\visualsc_fork\bin\debug\moc_textblock.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC textblock.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_textblock.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">textblock.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore textblock.h -o C:\Work\visualsc_fork\bin\release\moc_textblock.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC textblock.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_textblock.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="textblockattributes.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">textblockattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore textblockattributes.h -o C:\Work\visualsc_fork\bin\debug\moc_textblockattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC textblockattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_textblockattributes.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">textblockattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore textblockattributes.h -o C:\Work\visualsc_fork\bin\release\moc_textblockattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC textblockattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_textblockattributes.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="transitionattributes.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">transitionattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore transitionattributes.h -o C:\Work\visualsc_fork\bin\debug\moc_transitionattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC transitionattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Work\visualsc_fork\bin\debug\moc_transitionattributes.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">transitionattributes.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+if errorlevel 1 goto VCEnd
+C:\Work\QT_Sources\qt5\qtbuild\qtbase\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DSCDATAMODEL_LIBRARY -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -IC:/Work/QT_Sources/qt5/qtbase/mkspecs/win32-msvc2015 -IC:/Work/visualsc_fork/scdatamodel -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtWidgets -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtGui -IC:/Work/QT_Sources/qt5/qtbuild/qtbase/include/QtCore transitionattributes.h -o C:\Work\visualsc_fork\bin\release\moc_transitionattributes.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC transitionattributes.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Work\visualsc_fork\bin\release\moc_transitionattributes.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bin\debug\moc_iattribute.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_iattribute.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scdatamodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scdatamodel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scforkedtransition.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scforkedtransition.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scstate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scstate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_sctransition.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_sctransition.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_sctransitionbranch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_sctransitionbranch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scxmlreader.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scxmlreader.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_stateattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_stateattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_textblock.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_textblock.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_textblockattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_textblockattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_transitionattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_transitionattributes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

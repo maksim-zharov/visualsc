@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="customtablewidgetitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="customtreewidgetitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="formviewobject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fvitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fvstate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scformview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stateselectionwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="customtablewidgetitem.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="customtreewidgetitem.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="formviewobject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fvitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fvstate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="scformview.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="scformview_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="stateselectionwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bin\debug\moc_customtablewidgetitem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_customtablewidgetitem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_customtreewidgetitem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_customtreewidgetitem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_scformview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_scformview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\moc_stateselectionwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\moc_stateselectionwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\debug\qrc_scformview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bin\release\qrc_scformview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Bold-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\Bold-50.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\bold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\bringtofront.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\cancel.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\cancelw10.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\cardboardbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\cardboardboxnew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\center.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\delete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\deletesign.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\diagonalarrowhollow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\export.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\family.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\floodfill.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\fork.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\framein.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\frameout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\import.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\info.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\infow8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\italic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\leftarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\linecolor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\linepointer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\minusw10.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newfile.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\openfolder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\picture.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\plusw10.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\pointer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\reselect.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\reselectgrey.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\rightarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\rightarrowhollow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\rightarrowhollownew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\roundadd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\roundminus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="resources\scformview.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="resources\sendtoback.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\statebutton.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\textblock.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\textbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\textpointer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\transitionbutton.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\underline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\family.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
