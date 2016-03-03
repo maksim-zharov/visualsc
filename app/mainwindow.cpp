@@ -146,7 +146,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // load settings from settings.ini if it exists, otherwise create a settings.ini file
     _settingsFileName = QDir::currentPath()+"/"+"settings.ini";
-//    qDebug () << "settings file " << _settingsFileName;
+    qDebug () << "settings file " << _settingsFileName;
     loadSettings();
 
 

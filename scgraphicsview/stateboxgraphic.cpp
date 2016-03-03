@@ -32,12 +32,12 @@
 #include "cornergrabber.h"
 
 
-#define HIDE_CORNER_GRABBERS
+//#define HIDE_CORNER_GRABBERS
 
 #define PEN_DEFAULT_WIDTH       2.472135954999419
 #define PEN_HOVER_WIDTH         4
 
-#define RECT_ROUNDNESS          0
+#define RECT_ROUNDNESS          7.0
 #define INNER_BORDER_THICKNESS  5.0
 
 #define INNER_BORDER_DISTANCE   INNER_BORDER_THICKNESS/2 + PEN_DEFAULT_WIDTH/2
@@ -62,7 +62,7 @@
 #define STATE_NAME_HEIGHT   26
 
 #define ENTRY_TOP           STATE_NAME_HEIGHT+2
-#define ENTRY_HEIGHT        24
+#define ENTRY_HEIGHT        34
 
 
 
@@ -1725,7 +1725,7 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
 
         QRectF rect (topLeft, bottomRight);
 
-        painter->drawRoundRect(rect,RECT_ROUNDNESS,RECT_ROUNDNESS); // corner radius of 25 pixels
+        painter->drawRoundedRect(rect,RECT_ROUNDNESS,RECT_ROUNDNESS); // corner radius of 25 pixels
     }
 
     // draw the top box, the visible one
@@ -1802,7 +1802,7 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
 
 
 
-    painter->drawRoundRect(rect2,RECT_ROUNDNESS,RECT_ROUNDNESS);
+    painter->drawRoundedRect(rect2,RECT_ROUNDNESS,RECT_ROUNDNESS);
 
     if(getStateModel()->isFinal())
     {
@@ -1813,7 +1813,7 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
         _pen.setStyle( Qt::SolidLine );
         painter->setPen(_pen);
 
-        painter->drawRoundRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS);
+        painter->drawRoundedRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS);
 
 
     }
@@ -1825,7 +1825,7 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
         _pen.setJoinStyle(Qt::MiterJoin);
         _pen.setStyle( Qt::SolidLine );
         painter->setPen(_pen);
-        painter->drawRoundRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS); 
+        painter->drawRoundedRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS);
     }
 
 
