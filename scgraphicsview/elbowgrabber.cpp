@@ -3,6 +3,7 @@
 #include "arrowheadgraphic.h"
 #include <QDebug>
 #include <QTcore/qmath.h>
+#include <functional>
 
 #define PI                  3.14159265359
 #define SNAP_ANGLE          11
@@ -615,8 +616,11 @@ void ElbowGrabber::updateArrowHead()
         else if ( quadrant == 2 )
             angle = -180 -angle;
 
-        this->setAngle(angle);
-        this->update();
+        if(_arrowAngle != int(angle) - 45)
+        {
+            this->setAngle(angle);
+            this->update();
+        }
     }
 }
 
@@ -671,7 +675,13 @@ void ElbowGrabber::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QW
         _arrowHead->setWidth(_width);
         _arrowHead->setHeight(_height);
         _arrowHead->setPos( - _width/2, - _height/2);
-        _arrowHead->update();
+
+        int hashit = _arrowAngle + _outterborderColor.red() + _outterborderColor.green() + _outterborderColor.blue() + _width + _height;
+        if(_arrowHead->hash != hashit)
+        {
+            _arrowHead->hash = hashit;
+            _arrowHead->update();
+        }
     }
 
 }
