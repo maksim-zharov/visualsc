@@ -670,15 +670,15 @@ void ElbowGrabber::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QW
     {
        // qDebug()<< "setting arrowhead angle: " << _arrowAngle;
         updateArrowHead();
-        _arrowHead->setRotation(_arrowAngle);
-        _arrowHead->setColor(_outterborderPen.color());
-        _arrowHead->setWidth(_width);
-        _arrowHead->setHeight(_height);
-        _arrowHead->setPos( - _width/2, - _height/2);
 
         int hashit = _arrowAngle + _outterborderColor.red() + _outterborderColor.green() + _outterborderColor.blue() + _width + _height;
         if(_arrowHead->hash != hashit)
         {
+            _arrowHead->setRotation(_arrowAngle);
+            _arrowHead->setColor(_outterborderPen.color());
+            _arrowHead->setWidth(_width);
+            _arrowHead->setHeight(_height);
+            _arrowHead->setPos( - _width/2, - _height/2);
             _arrowHead->hash = hashit;
             _arrowHead->update();
         }
