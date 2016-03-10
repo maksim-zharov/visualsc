@@ -392,12 +392,9 @@ void SCXMLReader::readElement()
     if (_reader.name() == "scxml")
     {
         qDebug() << "skipping scxml";
-        //emit enterStateElement();           // increase the transit level
         readStateMachine();
-        //readState(kSTATE_TYPE_Machine);   // disabled adding a state every time openFile happens
         enteredAStateElement = true;
     }
-
     if (_reader.name() == "state")
     {
         _currentItemType = ItemType::STATE;
@@ -405,17 +402,10 @@ void SCXMLReader::readElement()
         readState(kSTATE_TYPE_Normal);
         enteredAStateElement = true;
     }
-
     else if (_reader.name() == "initial")
     {
         emit enterStateElement();
         readState(kSTATE_TYPE_Initial);
-        enteredAStateElement = true;
-    }
-    else if (_reader.name() == "final")
-    {
-        emit enterStateElement();
-        readState(kSTATE_TYPE_Final);
         enteredAStateElement = true;
     }
     else if (_reader.name() == "transition")
@@ -539,10 +529,6 @@ void SCXMLReader::readState(STATE_TYPE stateType)
         stateTypeStr = "initial";
         break;
 
-    case  kSTATE_TYPE_Final:
-        stateTypeStr = "final";
-        break;
-
     case  kSTATE_TYPE_Machine:
         stateTypeStr = "machine";
         break;
@@ -571,11 +557,6 @@ void SCXMLReader::readState(STATE_TYPE stateType)
         else if ( XmlAttr.name() == "position" )
         {
             PositionAttribute * sa  = new PositionAttribute(NULL,XmlAttr.name().toString(), XmlAttr.value().toString());
-            stateAttributes->addItem( sa );
-        }
-        else if( XmlAttr.name() == "isParallelState")   // retroactive change to make this parallelState instead
-        {
-            StateString * sa  = new StateString(NULL,"parallelState", XmlAttr.value().toString());
             stateAttributes->addItem( sa );
         }
         else // unknown attribute, generalize it as a string attribute and add it

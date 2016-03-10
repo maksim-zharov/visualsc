@@ -264,7 +264,11 @@ void SCDataModel::handleStateMachineUidLoad(QString uid)
 
 void SCDataModel::handleStateMachineAttributeLoad(QString key, QString value)
 {
-    _topState->getStringAttr(key)->setValue(value);
+    StateString* attr = _topState->getStringAttr(key);
+    if(attr)
+    {
+        attr->setValue(value);
+    }
 }
 
 
@@ -1380,26 +1384,7 @@ bool SCDataModel::checkDataModel()
     QList<SCState*> stateMachines = this->getStateMachines();
     foreach(SCState* sm, stateMachines)
     {
-        if(sm->isParallel())
-        {
-            QList<SCState*> initialStates;
-            QList<SCState*> directChildren;
-            sm->getStates(directChildren);
-            foreach(SCState* child, directChildren)
-            {
-                if(child->isInitial())
-                    initialStates.append(child);
-            }
-
-            if(initialStates.size()!=0)
-            {
-                //            errorLog.append("State");
-                errorLog.append("State machine \""+sm->objectName()+"\" is parallel and should not have an initial state\n");
-            }
-        }
-        else
-        {
-            // check number of initial states
+           // check number of initial states
             QList<SCState*> initialStates;
             QList<SCState*> directChildren;
             sm->getStates(directChildren);
@@ -1418,7 +1403,6 @@ bool SCDataModel::checkDataModel()
             {
                 errorLog.append("State machine \""+sm->objectName()+"\" has too many initial states ("+QString::number(initialStates.size())+")\n");
             }
-        }
     }
 
     // if there were errors, then emit a message and return false

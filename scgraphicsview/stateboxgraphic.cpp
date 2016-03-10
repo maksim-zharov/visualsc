@@ -123,7 +123,6 @@ StateBoxGraphic::StateBoxGraphic(QGraphicsObject * parent,SCState *stateModel):
 
     // set the inner border colors of initial and final states
     _initialStateColor = QColor(104,237,153,255);
-    _finalStateColor = QColor(242,119,119,255);
 
     // proprogate the fixed text block's nameChanged Signal
     connect(_stateTitle, SIGNAL(changed(QString)), this, SIGNAL(nameChanged(QString)));
@@ -148,6 +147,8 @@ StateBoxGraphic::StateBoxGraphic(QGraphicsObject * parent,SCState *stateModel):
     connect(_minimize, SIGNAL(toggled()), this, SLOT(handleMinimize()));
 
     _minimizeSize = QPointF(MIN_WIDTH,MIN_HEIGHT);
+
+    historyImage.load(":/SCGraphicsView/history.png");
 
 }
 
@@ -372,34 +373,9 @@ void StateBoxGraphic::handleInitialStateChanged(StateString *)
     this->update();
 }
 
-/**
- * @brief StateBoxGraphic::handleFinalStateChanged
- * when a state's final state attribute is changed, udpate the screen
- */
-void StateBoxGraphic::handleFinalStateChanged(StateString *)
+void StateBoxGraphic::handleSubautomatHistoryChanged(StateString *)
 {
     this->update();
-}
-
-/**
- * @brief StateBoxGraphic::handleIsParallelStateChanged
- * @param ss
- *
- * when a state's parallelState Attribute is changed. update all direct children
- *
- */
-void StateBoxGraphic::handleIsParallelStateChanged(StateString* ss)
-{
-
-    QList<StateBoxGraphic*> directChildren;
-    this->getStates(directChildren);
-
-    qDebug () << "attempting to redraw children...";
-    for(int i = 0 ; i < directChildren.size(); i++)
-    {
-//        directChildren.at(i)->hoverEnterEvent(
-        directChildren.at(i)->forceUpdate();
-    }
 }
 
 SCState* StateBoxGraphic::getStateModel()
@@ -1707,7 +1683,6 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
         // to 125 allowing a mix of th color and and the background, making more realistic shadow effect.
         QColor grey2(225,225,225,125);
 
-
         gradient.setColorAt((qreal)0, grey1 );
         gradient.setColorAt((qreal)1, grey2 );
 
@@ -1737,33 +1712,17 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
     else
         _pen.setWidthF(_penWidth);
 
-    if(this->getStateModel()->parentAsSCState()->isParallel())
-        setDrawBoxLineStyle(kDrawDotted);
-    else
-        setDrawBoxLineStyle(kDrawSolid);
+    setDrawBoxLineStyle(kDrawSolid);
+    _pen.setStyle( Qt::SolidLine );
 
-    if ( _drawBoxLineStyle == kDrawSolid )
-        _pen.setStyle( Qt::SolidLine );
-    else
-        _pen.setStyle( Qt::DotLine );
-
-    painter->setPen(_pen);
+     painter->setPen(_pen);
 
     if ( _boxStyle != kTransparent )
     {
-        // QBrush brush2(QColor(187,250,185,255),Qt::SolidPattern);  // the box fill color
-        //qDebug() << "my levle: " <<this->getStateModel()->getLevel() ;
-
-//         int r = (255+ (255 - this->getStateModel()->getLevel()*30)%255);
-//         int g = (255+ (255 - this->getStateModel()->getLevel()*20)%255);
-//         int b = (255+ (255 - this->getStateModel()->getLevel()*10)%255);
-
-        // add colored layers
+         // add colored layers
          int r = 255 - (((this->getStateModel()->getLevel()-BOX_RED_OFFSET) * BOX_RED_COLOR_JUMP ) % 255);
          int g = 255 - (((this->getStateModel()->getLevel()-BOX_GREEN_OFFSET) * BOX_GREEN_COLOR_JUMP ) % 255);
          int b = 255 - (((this->getStateModel()->getLevel()-BOX_BLUE_OFFSET) * BOX_BLUE_COLOR_JUMP ) % 255);
-
-
 
          QBrush brush2(QColor(r,g,b,255),Qt::SolidPattern);  // white fill
          painter->setBrush(brush2);
@@ -1779,13 +1738,10 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
         QPointF topLeft2 (_drawingOriginX, _drawingOriginY);
         QPointF bottomRight2 ( _drawingWidth - shadowThickness, _drawingHeight - shadowThickness);
 
-
-
         rect2 = QRectF (topLeft2, bottomRight2);
 
         QPointF offset(INNER_BORDER_DISTANCE,INNER_BORDER_DISTANCE);
         rect3 = QRectF(topLeft2 + offset, bottomRight2 - offset);
-
     }
     else
     {
@@ -1799,25 +1755,9 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
     }
 
 
-
-
-
     painter->drawRoundedRect(rect2,RECT_ROUNDNESS,RECT_ROUNDNESS);
 
-    if(getStateModel()->isFinal())
-    {
-        _pen.setColor(_finalStateColor);
-        _pen.setWidthF(INNER_BORDER_THICKNESS);
-        _pen.setCapStyle(Qt::RoundCap);
-        _pen.setJoinStyle(Qt::MiterJoin);
-        _pen.setStyle( Qt::SolidLine );
-        painter->setPen(_pen);
-
-        painter->drawRoundedRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS);
-
-
-    }
-    else if(getStateModel()->isInitial())
+    if(getStateModel()->isInitial())
     {
         _pen.setColor(_initialStateColor);
         _pen.setWidthF(INNER_BORDER_THICKNESS);
@@ -1828,7 +1768,13 @@ void StateBoxGraphic::paintWithVisibleBox (QPainter *painter, const QStyleOption
         painter->drawRoundedRect(rect3,RECT_ROUNDNESS,RECT_ROUNDNESS);
     }
 
-
+    if(getStateModel()->isHistoryEnabled())
+    {
+        const qreal k_iconSize = 20.0f;
+        QPointF topLeft2 (_drawingOriginX, _drawingOriginY);
+        QPointF offset(k_iconSize, k_iconSize);
+        painter->drawImage(QRectF(topLeft2 - offset, topLeft2), historyImage);
+    }
 
 
 }
@@ -1841,20 +1787,6 @@ void  StateBoxGraphic::paint (QPainter *painter, const QStyleOptionGraphicsItem 
         painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
         paintWithVisibleBox (painter,0,0);
     }
-
-#if 0  // debug stuff
-    if ( _diagLineDrawIt )
-    {
-        QPen p;
-        p.setColor(Qt::blue);
-        p.setStyle(Qt::DotLine);
-        painter->setPen(p);
-        painter->drawLine(_diagLineStart, _diagLineEnd);
-
-        painter->drawEllipse(_intersection, 3,3);
-    }
-#endif
-
 }
 
 

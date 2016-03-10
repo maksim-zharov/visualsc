@@ -103,7 +103,7 @@ void SCState::initCommon()
     }
 
     // add each of the default attributes
-    DEFAULT_ATTRIBUTES_LIST << "name" << "size" << "position" <<"entryAction"<<"exitAction"<<"parallelState"<<"finalState"<<"initialState"<<"uid" <<"comments"<<"type"; // type is added to the state in scxml reader.
+    DEFAULT_ATTRIBUTES_LIST << "name" << "size" << "position" <<"entryAction"<<"exitAction"<<"initialState"<<"uid" <<"comments"<<"type"; // type is added to the state in scxml reader.
     //DO_NOT_DISPLAY_HASH.insert("uid",0);
 
     // set the initial attributes and size
@@ -113,9 +113,8 @@ void SCState::initCommon()
     StateString * type = new StateString(this, "type", "");
     StateString * onEntryAction = new StateString(this, "entryAction","");
     StateString * onExitAction = new StateString(this, "exitAction", "");
-    StateString * finalState = new StateString(this, "finalState", "false");
     StateString * initialState = new StateString(this, "initialState", "false");
-    StateString * parallelState = new StateString(this, "parallelState", "false");
+    StateString * subautomatHistory = new StateString(this, "subautomatHistory", "false");
     StateString * comments = new StateString(this, "comments", "");
 
     QUuid u=QUuid::createUuid();
@@ -129,9 +128,8 @@ void SCState::initCommon()
     attributes.addItem(type);
     attributes.addItem(onEntryAction);
     attributes.addItem(onExitAction);
-    attributes.addItem(finalState);
     attributes.addItem(initialState);
-    attributes.addItem(parallelState);
+    attributes.addItem(subautomatHistory);
     attributes.addItem(uid);
     attributes.addItem(comments);
 
@@ -150,11 +148,6 @@ void SCState::initCommon()
     qDebug()<< "_IdTextBlock = , state = " + defaultName;
 }
 
-
-bool SCState::isFinal()
-{
-    return (attributes.value("finalState")->asString()=="true");
-}
 
 bool SCState::hasAnInitialState()
 {
@@ -208,9 +201,9 @@ bool SCState::isInitial()
     return (attributes.value("initialState")->asString()=="true");
 }
 
-bool SCState::isParallel()
+bool SCState::isHistoryEnabled()
 {
-    return (attributes.value("parallelState")->asString()=="true");
+    return (attributes.value("subautomatHistory")->asString()=="true");
 }
 
 bool SCState::isStateMachine()
@@ -241,20 +234,6 @@ SCState* SCState::getInitialState()
                 _initialState = state;
                 return state;
             }
-        }
-    }
-    return NULL;
-}
-
-SCState* SCState::getFinalState()
-{
-    for(int i = 0 ; i < this->children().size(); i++)
-    {
-        SCState* state = dynamic_cast<SCState*>(this->children().at(i));
-        if(state)
-        {
-            if(state->isFinal())
-                return state;
         }
     }
     return NULL;
@@ -445,7 +424,14 @@ PositionAttribute* SCState::getPosAttr()
 
 StateString* SCState::getStringAttr(QString attrName)
 {
-    return dynamic_cast<StateString*>(attributes.value(attrName));
+    if(attributes.find(attrName) != attributes.end())
+    {
+        return dynamic_cast<StateString*>(attributes.value(attrName));
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 

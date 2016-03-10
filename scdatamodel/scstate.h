@@ -85,14 +85,11 @@ public:
     void addTransistion(SCTransition*);
     void addState(SCState *);
 
-    bool isParallel();
-
     bool isInitial();
-    bool isFinal();
+    bool isHistoryEnabled();
 
     SCState* getInitialState();
     SCState* getInitialStateMember();
-    SCState* getFinalState();
     bool isStateMachine();
 
     void setInitial(QString);

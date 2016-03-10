@@ -747,11 +747,6 @@ void SCFormView::handlePropertyCellChanged(int r, int c)
                 sendMessage("Error","The Root Machine cannot be an initial state.");
                 failed = true;
             }
-            else if(parentSt->isParallel())
-            {
-                sendMessage("Error","Parallel states have no initial top-level states.");
-                failed = true;
-            }
             else if(parentSt->hasAnInitialState())
             {
                 sendMessage("Error","State Machine \""+parentSt->objectName()+"\" already has an initial state \""+parentSt->getInitialStateMember()->objectName()+"\"");
@@ -3396,9 +3391,7 @@ void SCFormView::aboutAttributes()
                     "name\t\tState's Name\n"
                     "entryAction\tComma separated list of entry events e.g. \"action1,action2,action3\"\n"
                     "exitAction\tComma separated list of exit events\n"
-                    "finalState\t(true/false) Final state of the parent state machine [OPTIONAL]\n"
                     "initialState\t(true/false) Initial state of a state machine [REQUIRED unless parallel]\n"
-                    "parallelState\t(true/false) True = direct children states are concurrently run\n"
                     "position\tPosition in parent's coordinate system\n"
                     "size\t\tSize in pixels\n"
                     "type\t\tfor state machine recognition\n"

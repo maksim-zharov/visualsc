@@ -127,9 +127,8 @@ public slots:
     void updateElements();
     void handleTransitionLineStartMoved(QPointF newPos);
     void handleTransitionLineEndMoved(QPointF newPos);
-    void handleIsParallelStateChanged(StateString*);
     void handleInitialStateChanged(StateString*);
-    void handleFinalStateChanged(StateString*);
+    void handleSubautomatHistoryChanged(StateString*);
     void handleAttributeChanged(SizeAttribute*);
     void handleAttributeChanged(PositionAttribute* pos);
     void handleAttributeChanged(StateName*);
@@ -185,7 +184,6 @@ private:
 
     QPointF _intersection;
 
-    QColor  _finalStateColor;
     QColor  _initialStateColor;
 
     FixedTextBlock* _stateTitle;
@@ -197,6 +195,7 @@ private:
     QPointF _restoreSize;
     QPointF _minimizeSize;
 
+    QImage historyImage;
 
 
 };

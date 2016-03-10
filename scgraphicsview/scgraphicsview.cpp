@@ -900,27 +900,6 @@ void SCGraphicsView::handleNewRootMachine(SCState* state)
     this->connectState(state);
 }
 
-/**
- * @brief SCGraphicsView::handleRootMachineIsParallelChanged
- *
- * SLOT
- * connected specifically to the root machine's parallelState Attribtue
- * while other states will have this function in stateboxgraphic, since the root machine has no statebox graphic, update its children graphics will be handled here.
- *
- * is parallel state is the only attribute for the root machine that can affect something in the graphics view.
- */
-void SCGraphicsView::handleRootMachineIsParallelChanged(StateString *)
-{
-    qDebug() << "SCGraphicsView::handleRootMachineIsParallelChanged";
-    QList<SCState*> states;
-    _dm->getTopState()->getStates(states);
-
-    for(int i = 0 ; i < states.size();i ++)
-    {
-        StateBoxGraphic* sbg = _hashStateToGraphic.value(states.at(i));
-        sbg->forceUpdate();
-    }
-}
 
 /**
  * @brief SCGraphicsView::connectState
@@ -975,8 +954,8 @@ void SCGraphicsView::connectState(SCState* state, StateBoxGraphic* stateGraphic)
     StateString* initialState = state->getStringAttr("initialState");
     connect(initialState, SIGNAL(changed(StateString*)), stateGraphic, SLOT(handleInitialStateChanged(StateString*)));
 
-    StateString* finalState = state->getStringAttr("finalState");
-    connect(finalState, SIGNAL(changed(StateString*)), stateGraphic, SLOT(handleFinalStateChanged(StateString*)));
+    StateString* subautomatHistory = state->getStringAttr("subautomatHistory");
+    connect(subautomatHistory, SIGNAL(changed(StateString*)), stateGraphic, SLOT(handleSubautomatHistoryChanged(StateString*)));
 
     StateString* ena = state->getStringAttr("entryAction");
     connect(ena ,SIGNAL(changed(StateString*)), stateGraphic, SLOT(handleEntryActionChanged(StateString*)));
