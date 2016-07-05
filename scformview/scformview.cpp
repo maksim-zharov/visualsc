@@ -151,7 +151,7 @@ SCFormView::SCFormView(QWidget *parent, SCDataModel *dataModel) :
 
     propertyLayout->addWidget(textBlockPropertyTable);
 
-    setWindowTitle(tr("Tree Statechart Editor"));
+    setWindowTitle(tr("Tree Statechart Editor -- v1.0"));
     setUnifiedTitleAndToolBarOnMac(true);
 
    // QList<SCState*> states;
