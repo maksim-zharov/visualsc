@@ -676,7 +676,8 @@ void SCGraphicsView::saveImage(QString fileName)
 
     // resize the rect to bound all items
     _scene->setSceneRect(_scene->itemsBoundingRect());
-    QImage image(_scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    const int qualityScale = 8;
+    QImage image(_scene->sceneRect().size().toSize()*qualityScale, QImage::Format_ARGB32);
     image.fill(Qt::transparent);
 
 
